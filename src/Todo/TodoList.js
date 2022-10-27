@@ -21,7 +21,7 @@ function TodoList(props) {
 }
 
 TodoList.propTypes = {
-    todos: PropTypes.array
+    todos: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default TodoList
