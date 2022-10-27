@@ -1,4 +1,5 @@
 import React from "react";
+import TodoItem from "./TodoItem";
 
 const styles = {
     ul: {
@@ -11,8 +12,9 @@ const styles = {
 export default function TodoList() {
     return (
         <ul style={styles.ul}>
-            <li>1</li>
-            <li>2</li>
+            <TodoItem />
+            <TodoItem />
+            <TodoItem />
         </ul>
     )
 }
