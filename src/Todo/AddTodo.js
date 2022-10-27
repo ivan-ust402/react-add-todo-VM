@@ -25,19 +25,21 @@ const styles = {
 }
 
 function AddTodo({ onCreate }) {
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState('')
 
   function submitHandler(event) {
     event.preventDefault()
 
     if (value.trim()) {
       onCreate(value)
+      setValue('')
     }
   }
 
   return (
     <form style={styles.form} onSubmit={submitHandler}>
       <input
+        input value={value}
         type="text"
         style={styles.input}
         onChange={(event) => setValue(event.target.value)}

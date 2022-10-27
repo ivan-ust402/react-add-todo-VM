@@ -27,7 +27,7 @@ function App() {
 
   function addTodo(title) {
     setTodos(todos.concat([{
-      title: title,
+      title,
       id: Date.now(),
       completed: false,
     }]))
