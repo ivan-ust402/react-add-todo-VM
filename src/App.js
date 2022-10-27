@@ -18,6 +18,7 @@ function App() {
     .then(todos => {
       setTimeout(() => {
         setTodos(todos)
+        setLoading(false)
       }, 1000)
     })  
   }, [])
@@ -50,10 +51,11 @@ function App() {
       <div className="wrapper">
         <h1>Your Todo List</h1>
         <AddTodo onCreate={addTodo} />
+        {loading && <Loader />}
         {todos.length ? (
           <TodoList todos={todos} onToggle={toggleTodo} />
           ) : (
-          loading ? <Loader /> : <p>No todos</p>
+          loading ? null : <p>No todos</p>
           )}
         
       </div>
